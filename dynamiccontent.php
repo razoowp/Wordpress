@@ -169,5 +169,21 @@ function cptui_register_my_cpts_alreadyadiver() {
 
           </nav>
           <!-- Navbar Ends -->
+
+
+9. Post Name permalink fix
+
+in .htaccess file update this:
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+
 	
 	
