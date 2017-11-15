@@ -184,6 +184,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 
+11.. Bootstrap nav dropdown on hover:
 
-	
+ul.nav li.dropdown:hover ul.dropdown-menu {
+display: block;    
+}
 	
