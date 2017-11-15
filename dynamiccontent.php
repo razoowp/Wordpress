@@ -189,4 +189,33 @@ RewriteRule . /index.php [L]
 ul.nav li.dropdown:hover ul.dropdown-menu {
 display: block;    
 }
+
+or:
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+parent link clickable to link: edit in bootstrap nav walker php file:
+
+// If item has_children add atts to a.
+if ( $args->has_children && $depth === 0 ) {
+   $atts['href']        = '#';
+   $atts['data-toggle'] = 'dropdown';
+   $atts['class']           = 'dropdown-toggle';
+} else {
+   $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+}
+Change this piece of code to:
+
+// If item has_children add atts to a.
+if ( $args->has_children && $depth === 0 ) {
+   $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+   //$atts['data-toggle']   = 'dropdown';
+   $atts['class']           = 'dropdown-toggle';
+} else {
+   $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+}
+
 	
